@@ -1,0 +1,51 @@
+.cs-nav-button:not(:first-of-type) {
+  @apply ml-4;
+}
+
+.cs-nav-button {
+  @apply px-3 py-2 rounded-md text-sm font-medium;
+}
+
+.cs-nav-button.active {
+  @apply text-white bg-indigo-800;
+}
+
+.cs-nav-button:focus {
+  @apply outline-none text-white bg-indigo-600;
+}
+
+.cs-nav-button:not(.active) {
+  @apply text-indigo-200;
+}
+
+.cs-nav-button:not(.active):hover {
+  @apply text-white bg-indigo-600;
+}
+
+.cs-card-tab:not(:first-of-type) {
+  @apply ml-4;
+}
+
+.cs-card-tab {
+  @apply px-3 py-2 font-medium text-sm leading-5 rounded-md;
+}
+
+.cs-card-tab:not(.active) {
+  @apply text-gray-500;
+}
+
+.cs-card-tab:not(.active):hover {
+  @apply text-gray-700;
+}
+
+.cs-card-tab:not(.active):focus {
+  @apply outline-none text-indigo-600 bg-indigo-50;
+}
+
+.cs-card-tab.active {
+  @apply text-indigo-700 bg-indigo-100;
+}
+
+.cs-card-tab.active:focus {
+  @apply outline-none text-indigo-800 bg-indigo-200;
+}

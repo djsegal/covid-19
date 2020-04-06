@@ -1,11 +1,26 @@
 ---
 ---
 
-/* Front matter is necessary for Jekyll */
-
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-/* Write your styles below this line. */
+@import "_sass/custom.scss";
+@import "css/nouislider.css";
 
-@tailwind utilities;
+.svg-container svg {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cs-page h1 {
+  @apply text-3xl font-bold leading-tight text-gray-900;
+}
+
+.cs-page h2 {
+  @apply text-2xl font-bold leading-7 text-gray-900;
+}
+
+.cs-page h3 {
+  @apply text-lg leading-6 font-medium text-gray-900;
+}
