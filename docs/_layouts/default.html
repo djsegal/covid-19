@@ -1,12 +1,11 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-    {% feed_meta %}
-    {% seo %}
 
-  <base href="https://djsegal.github.io/covid-19/">
+  {% feed_meta %}
+  {% seo %}
 
-  <link rel="stylesheet" href="css/site.css">
+  <link href="{{ 'css/site.css' | relative_url }}" rel="stylesheet">
 
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
