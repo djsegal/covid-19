@@ -9,6 +9,8 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Build settings
+future: true
+
 markdown: kramdown
 plugins:
   - jekyll-feed
