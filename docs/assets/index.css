@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cs-nav-button {
+  @apply px-3 py-2 rounded-md text-sm font-medium;
+}
+
+.cs-nav-button:not(:first-of-type) {
+  @apply ml-4;
+}
+
+.cs-nav-button:focus {
+  @apply outline-none text-white bg-indigo-600;
+}
+
+.cs-nav-button.active {
+  @apply text-white bg-indigo-800;
+}
+
+.cs-nav-button:not(.active) {
+  @apply text-indigo-200;
+}
+
+.cs-nav-button:not(.active):hover {
+  @apply text-white bg-indigo-600;
+}
+
+.cs-mobile-nav-button {
+  @apply block px-3 py-2 rounded-md text-base font-medium;
+}
+
+.cs-mobile-nav-button:not(:first-of-type) {
+  @apply mt-1;
+}
+
+.cs-mobile-nav-button:focus {
+  @apply outline-none;
+}
+
+.cs-mobile-nav-button:not(.active) {
+  @apply text-indigo-200;
+}
+
+.cs-mobile-nav-button:not(.active):focus {
+  @apply text-white bg-indigo-600;
+}
+
+.cs-mobile-nav-button:not(.active):hover {
+  @apply text-white bg-indigo-600;
+}
+
+.cs-mobile-nav-button.active {
+  @apply text-white bg-indigo-800;
+}
+
+.cs-mobile-nav-button.active:focus {
+  @apply text-white bg-gray-700;
+}
