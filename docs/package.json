@@ -1,5 +1,10 @@
 {
   "private": true,
+  "scripts": {
+    "prod": "NODE_ENV=production npx webpack",
+    "dev": "NODE_ENV=development npx webpack",
+    "watch": "NODE_ENV=development npx webpack --watch"
+  },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "autoprefixer": "^9.7.6",
