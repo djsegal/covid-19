@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.svg-container svg {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .cs-body h1 {
   @apply text-3xl font-bold leading-tight text-gray-900;
 }
