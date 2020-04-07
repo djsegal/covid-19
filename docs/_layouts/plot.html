@@ -1,0 +1,10 @@
+---
+layout: post
+---
+
+{% include card_tabs.html %}
+
+{% assign card_data_path = content | strip_newlines %}
+<script>
+  {% include plotly.js %}
+</script>

@@ -26,12 +26,7 @@ layout: default
         <div class="bg-white overflow-hidden shadow sm:rounded-lg">
           <div class="px-4 py-5 sm:p-6">
 
-            {% include card_tabs.html %}
-
-            {% assign card_data_path = content | strip_newlines %}
-            <script>
-              {% include plotly.js %}
-            </script>
+            {{ content }}
 
           </div>
         </div>
