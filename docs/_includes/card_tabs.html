@@ -1,0 +1,46 @@
+{% assign category_name = page.categories | first %}
+{% assign category_pages = site.categories[category_name]  %}
+
+{% if category_pages.size > 1 %}
+
+  <div>
+
+    <div class="sm:hidden">
+      <select class="form-select block w-full" onchange="location = this.value;">
+
+        {% for category_page in category_pages %}
+          {% if category_page.url == page.url %}
+            <option selected value="{{category_page.url}}">
+              {{ category_page.title }}
+            </option>
+          {% else %}
+            <option value="{{category_page.url}}">
+              {{ category_page.title }}
+            </option>
+          {% endif %}
+        {% endfor %}
+
+      </select>
+    </div>
+
+    <div class="hidden sm:block">
+      <nav class="flex" style="justify-content: center;">
+
+        {% for category_page in category_pages %}
+          {% if category_page.url == page.url %}
+            <a href="{{category_page.url}}" class="cs-card-tab active">
+              {{ category_page.title }}
+            </a>
+          {% else %}
+            <a href="{{category_page.url}}" class="cs-card-tab">
+              {{ category_page.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+
+      </nav>
+    </div>
+
+  </div>
+
+{% endif %}
