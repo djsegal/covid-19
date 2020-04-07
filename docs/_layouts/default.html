@@ -16,11 +16,6 @@
   </head>
 
   <body class="antialiased font-sans bg-gray-100">
-    {{ site.data.manifest['docs.css'] | prepend: '../' | relative_url }}'<br>
-    {{ site.data.manifest['docs.css'] | prepend: '../' }}'<br>
-    {{ site.data.manifest['docs.css'] | prepend: '..' | relative_url }}'<br>
-    {{ site.data.manifest['docs.css'] | prepend: '..' }}'<br>
-
     {{ content }}
   </body>
 </html>
