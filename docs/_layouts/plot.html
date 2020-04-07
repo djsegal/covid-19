@@ -7,7 +7,7 @@ layout: post
 
     {% include card_tabs.html %}
 
-    {% assign card_data_path = content | strip_newlines %}
+    {% assign card_data_path = content | strip_newlines | prepend: "assets/json/" | append: ".json" | relative_url %}
 
     <div class="px-6 mb-4 pb-0.5">
       <div id="js-plot" class="h-96 mt-3.5 mb-1.5" style="width:100%;">

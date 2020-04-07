@@ -91,7 +91,7 @@ function updatePlotly() {
 
 globalPlotlyJson = undefined;
 
-$.getJSON("/assets/json/{{ card_data_path }}.json", function (curJson) {
+$.getJSON("{{ card_data_path }}", function (curJson) {
   globalPlotlyJson = curJson;
 
   curPlotlyGlobal = new Array(curJson.ranges.length);
