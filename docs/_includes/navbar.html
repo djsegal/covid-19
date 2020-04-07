@@ -18,13 +18,13 @@
               {% assign pages_urls = pages_list | map: "url" %}
 
               {% if pages_urls contains page.url %}
-                <a href="{{pages_list[0].url}}" class="cs-nav-button active">
+                <a href="{{ pages_list[0].url | relative_url }}" class="cs-nav-button active">
                   {% for word in words %}
                     {{ word | capitalize }}
                   {% endfor %}
                 </a>
               {% else %}
-                <a href="{{pages_list[0].url}}" class="cs-nav-button">
+                <a href="{{ pages_list[0].url | relative_url }}" class="cs-nav-button">
                   {% for word in words %}
                     {{ word | capitalize }}
                   {% endfor %}
@@ -65,13 +65,13 @@
         {% assign pages_urls = pages_list | map: "url" %}
 
         {% if pages_urls contains page.url %}
-          <a href="{{pages_list[0].url}}" class="cs-mobile-nav-button active">
+          <a href="{{ pages_list[0].url | relative_url }}" class="cs-mobile-nav-button active">
             {% for word in words %}
               {{ word | capitalize }}
             {% endfor %}
           </a>
         {% else %}
-          <a href="{{pages_list[0].url}}" class="cs-mobile-nav-button">
+          <a href="{{ pages_list[0].url | relative_url }}" class="cs-mobile-nav-button">
             {% for word in words %}
               {{ word | capitalize }}
             {% endfor %}
