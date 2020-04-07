@@ -2,9 +2,26 @@
 layout: post
 ---
 
-{% include card_tabs.html %}
+<div class="bg-white overflow-hidden shadow sm:rounded-lg">
+  <div class="py-5 sm:py-6">
 
-{% assign card_data_path = content | strip_newlines %}
-<script>
-  {% include plotly.js %}
-</script>
+    {% include card_tabs.html %}
+
+    {% assign card_data_path = content | strip_newlines %}
+
+    <div class="px-6 mb-4 pb-0.5">
+      <div id="js-plot" class="h-96 mt-3.5 mb-1.5" style="width:100%;">
+      </div>
+    </div>
+
+    <div class="px-6 border-t border-gray-200 pb-2 pt-2">
+      <form class="m-0 js-slider-form pt-1">
+      </form>
+    </div>
+
+    <script>
+      {% include plotly.js %}
+    </script>
+
+  </div>
+</div>
