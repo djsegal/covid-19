@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.cs-body h1 {
+  @apply text-3xl font-bold leading-tight text-gray-900;
+}
+
+.cs-body h2 {
+  @apply text-2xl font-bold leading-7 text-gray-900;
+}
+
+.cs-body h3 {
+  @apply text-lg font-medium leading-6 text-gray-900;
+}
+
 .cs-nav-button {
   @apply px-3 py-2 rounded-md text-sm font-medium;
 }
@@ -58,14 +70,30 @@
   @apply text-white bg-gray-700;
 }
 
-.cs-body h1 {
-  @apply text-3xl font-bold leading-tight text-gray-900;
+.cs-card-tab:not(:first-of-type) {
+  @apply ml-4;
 }
 
-.cs-body h2 {
-  @apply text-2xl font-bold leading-7 text-gray-900;
+.cs-card-tab {
+  @apply px-3 py-2 font-medium text-sm leading-5 rounded-md;
 }
 
-.cs-body h3 {
-  @apply text-lg font-medium leading-6 text-gray-900;
+.cs-card-tab:not(.active) {
+  @apply text-gray-500;
+}
+
+.cs-card-tab:not(.active):hover {
+  @apply text-gray-700;
+}
+
+.cs-card-tab:not(.active):focus {
+  @apply outline-none text-indigo-600 bg-indigo-50;
+}
+
+.cs-card-tab.active {
+  @apply text-indigo-700 bg-indigo-100;
+}
+
+.cs-card-tab.active:focus {
+  @apply outline-none text-indigo-800 bg-indigo-200;
 }
