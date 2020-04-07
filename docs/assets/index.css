@@ -61,3 +61,11 @@
 .cs-body h1 {
   @apply text-3xl font-bold leading-tight text-gray-900;
 }
+
+.cs-body h2 {
+  @apply text-2xl font-bold leading-7 text-gray-900;
+}
+
+.cs-body h3 {
+  @apply text-lg font-medium leading-6 text-gray-900;
+}
