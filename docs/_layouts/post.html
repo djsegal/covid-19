@@ -7,7 +7,7 @@ layout: default
   {% include navbar.html %}
 
   <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto py-5 px-4 sm:px-6 lg:px-8">
       <h1 class="text-3xl font-bold leading-tight text-gray-900">
 
         {% assign words = page.categories | first | split: '-' | shift %}
@@ -20,26 +20,37 @@ layout: default
     </div>
   </header>
   <main>
-    <div class="max-w-4xl mx-auto py-6 px-6">
+    <div class="max-w-4xl mx-auto py-6 sm:px-6 lg:px-6">
       <!-- Replace with your content -->
 
-<div class="bg-white overflow-hidden overflow-hidden shadow rounded-lg">
+<div class="bg-white overflow-hidden overflow-hidden shadow sm:rounded-lg ">
   <div class="px-12 py-8">
 
 <div>
+
+  {% assign category_name = page.categories | first %}
+  {% assign category_pages = site.categories[category_name]  %}
+
   <div class="sm:hidden">
-    <select class="form-select block w-full">
-      <option>My Account</option>
-      <option>Company</option>
-      <option selected>Team Members</option>
-      <option>Billing</option>
+    <select class="form-select block w-full" onchange="location = this.value;">
+
+      {% for category_page in category_pages %}
+        {% if category_page.url == page.url %}
+          <option selected value="{{category_page.url}}">
+            {{ category_page.title }}
+          </option>
+        {% else %}
+          <option value="{{category_page.url}}">
+            {{ category_page.title }}
+          </option>
+        {% endif %}
+      {% endfor %}
+
     </select>
   </div>
+
   <div class="hidden sm:block">
     <nav class="flex" style="justify-content: center;">
-
-      {% assign category_name = page.categories | first %}
-      {% assign category_pages = site.categories[category_name]  %}
 
       {% for category_page in category_pages %}
         {% if category_page.url == page.url %}
@@ -55,9 +66,10 @@ layout: default
 
     </nav>
   </div>
+
 </div>
 
-    <div id="js-plot" class="h-96 mt-6 mb-1.5" style="width:100%;"></div>
+    <div id="js-plot" class="h-96 mt-3.5 mb-1.5" style="width:100%;"></div>
     <script>
       function makeRange(curIndex, curTuple) {
         curName = curTuple[0];
@@ -66,7 +78,7 @@ layout: default
         startIndex = Math.ceil( (curRange.length) / 2 ) - 1;
 
         curDivStr = "";
-        curDivStr += `<div class="js-slider mt-6 sm:grid sm:grid-cols-5 sm:gap-4 sm:items-start">
+        curDivStr += `<div class="js-slider mt-5 sm:grid sm:grid-cols-5 sm:gap-4 sm:items-start">
             <label for="username" class="block text-sm font-medium leading-5 text-gray-700 sm:mt-px" style="text-align: center;">`;
 
         curDivStr += curName;
@@ -134,8 +146,6 @@ layout: default
           curPlotlyGlobal[curIndex] = this.innerText;
         });
 
-        console.log(plotlyGlobal)
-        console.log(curPlotlyGlobal)
         plotlyGlobal = curPlotlyGlobal;
 
         updatePlotly();
@@ -181,9 +191,9 @@ layout: default
 
       function cleanPlotlyJson(plotlyJson) {
         if ( "config" in plotlyJson ) {
-          plotlyJson["config"] = $.merge(plotlyJson["config"], {responsive: false, displaylogo: false, modeBarButtonsToRemove: ["select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d", "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox", "hoverClosestCartesian", "hoverCompareCartesian"]});
+          plotlyJson["config"] = $.merge(plotlyJson["config"], {responsive: true, displaylogo: false, modeBarButtonsToRemove: ["select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d", "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox", "hoverClosestCartesian", "hoverCompareCartesian"]});
         } else {
-          plotlyJson["config"] = {responsive: false, displaylogo: false, modeBarButtonsToRemove: ["select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d", "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox", "hoverClosestCartesian", "hoverCompareCartesian"]};
+          plotlyJson["config"] = {responsive: true, displaylogo: false, modeBarButtonsToRemove: ["select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d", "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox", "hoverClosestCartesian", "hoverCompareCartesian"]};
         }
 
         delete plotlyJson["layout"]["width"];

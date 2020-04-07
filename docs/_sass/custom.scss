@@ -49,3 +49,31 @@
 .cs-card-tab.active:focus {
   @apply outline-none text-indigo-800 bg-indigo-200;
 }
+
+.cs-mobile-nav-button:not(:first-of-type) {
+  @apply mt-1;
+}
+
+.cs-mobile-nav-button {
+  @apply block px-3 py-2 rounded-md text-base font-medium;
+}
+
+.cs-mobile-nav-button:not(.active) {
+  @apply text-indigo-200;
+}
+
+.cs-mobile-nav-button:not(.active):focus {
+  @apply outline-none text-white bg-indigo-600;
+}
+
+.cs-mobile-nav-button:not(.active):hover {
+  @apply text-white bg-indigo-600;
+}
+
+.cs-mobile-nav-button.active {
+  @apply text-white bg-indigo-800;
+}
+
+.cs-mobile-nav-button.active:focus {
+  @apply outline-none text-white bg-gray-700;
+}
