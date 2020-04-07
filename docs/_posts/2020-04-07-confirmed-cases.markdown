@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title:  "Confirmed Cases"
 categories: 1-data-analysis
 permalink: /:categories/:title

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title:  "Viral Trajectory"
 categories: 1-data-analysis
 permalink: /:categories/:title

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title:  "Welcome to Jekyll!"
 categories: 2-pset-2
 permalink: /:categories/:title
