@@ -10,11 +10,11 @@
 
         {% for category_page in category_pages %}
           {% if category_page.url == page.url %}
-            <option selected value="{{category_page.url}}">
+            <option selected value="{{ category_page.url | relative_url }}">
               {{ category_page.title }}
             </option>
           {% else %}
-            <option value="{{category_page.url}}">
+            <option value="{{ category_page.url | relative_url }}">
               {{ category_page.title }}
             </option>
           {% endif %}
@@ -28,11 +28,11 @@
 
         {% for category_page in category_pages %}
           {% if category_page.url == page.url %}
-            <a href="{{category_page.url}}" class="cs-card-tab active">
+            <a href="{{ category_page.url | relative_url }}" class="cs-card-tab active">
               {{ category_page.title }}
             </a>
           {% else %}
-            <a href="{{category_page.url}}" class="cs-card-tab">
+            <a href="{{ category_page.url | relative_url }}" class="cs-card-tab">
               {{ category_page.title }}
             </a>
           {% endif %}

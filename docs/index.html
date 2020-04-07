@@ -19,9 +19,9 @@ title: COVID-19 Modeling
 
       {% for category in site.categories %}
         {% if forloop.last == true %}
-          <a class="text-indigo-600 hover:underline hover:text-indigo-400" href="{{ category[1][0].url }}">{{ category[0] | split: '-' | shift | join: " " }}</a>.
+          <a class="text-indigo-600 hover:underline hover:text-indigo-400" href="{{ category[1][0].url | relative_url }}">{{ category[0] | split: '-' | shift | join: " " }}</a>.
         {% else %}
-          <a class="text-indigo-600 hover:underline hover:text-indigo-400" href="{{ category[1][0].url }}">{{ category[0] | split: '-' | shift | join: " " }}</a>,
+          <a class="text-indigo-600 hover:underline hover:text-indigo-400" href="{{ category[1][0].url | relative_url }}">{{ category[0] | split: '-' | shift | join: " " }}</a>,
         {% endif %}
 
       {% endfor %}
