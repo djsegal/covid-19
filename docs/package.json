@@ -20,5 +20,8 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-manifest-plugin": "^2.2.0"
+  },
+  "dependencies": {
+    "@tailwindcss/ui": "^0.1.3"
   }
 }
