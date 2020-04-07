@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 
     {% if jekyll.environment == 'production' %}
-      <link rel="stylesheet" href="../{{ site.data.manifest['docs.css'] | relative_url }}">
+      <link rel="stylesheet" href="..{{ site.data.manifest['docs.css'] | relative_url }}">
     {% else %}
       <link rel="stylesheet" href="{{ site.data.manifest['docs.css'] | relative_url }}">
     {% endif %}
