@@ -126,5 +126,13 @@ function cleanPlotlyJson(plotlyJson) {
   delete plotlyJson["layout"]["width"];
   delete plotlyJson["layout"]["height"];
 
+  if ( "legend" in plotlyJson["layout"] ) {
+    plotlyJson["layout"]["legend"]["orientation"] = "h";
+    plotlyJson["layout"]["legend"]["xanchor"] = "middle";
+    plotlyJson["layout"]["legend"]["yanchor"] = "top";
+    plotlyJson["layout"]["legend"]["y"] = -0.15;
+    plotlyJson["layout"]["legend"]["x"] = +0.15;
+  }
+
   return plotlyJson;
 }
