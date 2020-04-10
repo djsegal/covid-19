@@ -10,7 +10,7 @@ Here,
 + `bundle exec` was needed on my machine because i have different ruby versions
 + `baseurl` is because github pages are hosted at a path on your github pages
 
-// i.e. djsegal.github.io/covid-19 is on the /covid-19 path
+// i.e. [djsegal.github.io/covid-19](https://djsegal.github.io/covid-19/) is on the /covid-19 path
 
 ----
 
