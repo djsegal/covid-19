@@ -11,3 +11,10 @@ Here,
 + baseurl is because github pages are hosted at a path on your github pages
 
 // i.e. djsegal.github.io/covid-19 is on the /covid-19 path
+
+----
+
+Before running this command you may have to `cd docs` and run the following commands before `js`:
+
++ `yarn install`
++ `bundle install`
