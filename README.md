@@ -6,9 +6,9 @@ alias js="npm run dev; bundle exec jekyll serve --baseurl ''"
 ```
 
 Here,
-+ npm run dev compiles the css/js assets (we use tailwind scss which needs this done)
-+ bundle exec was needed on my machine because i have different ruby versions
-+ baseurl is because github pages are hosted at a path on your github pages
++ `npm run dev` compiles the css/js assets (we use tailwind scss which needs this done)
++ `bundle exec` was needed on my machine because i have different ruby versions
++ `baseurl` is because github pages are hosted at a path on your github pages
 
 // i.e. djsegal.github.io/covid-19 is on the /covid-19 path
 
