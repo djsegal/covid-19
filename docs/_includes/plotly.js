@@ -27,14 +27,14 @@ function makeRange(curIndex, curTuple) {
   return;
 }
 
-function makeSliders(cur_ranges) {
+function makeSliders(cur_ranges, cur_defaults) {
   sliders = $(".js-slider");
 
   [].slice.call(sliders).forEach(function (slider, index) {
     curName = cur_ranges[index][0];
     curRange = cur_ranges[index][1];
 
-    startIndex = Math.ceil( (curRange.length) / 2 ) - 1;
+    startIndex = curRange.indexOf(cur_defaults[index]);
 
     bigValueSlider = $(slider).find(".js-slider__widget")[0];
 
@@ -110,14 +110,18 @@ $.getJSON("{{ card_data_path }}", function (curJson) {
   curJson.ranges.forEach(function (curTuple, curIndex) {
     curRange = curTuple[1];
 
-    rangeIndex = Math.ceil( (curRange.length) / 2 ) - 1;
-    curPlotlyGlobal[curIndex] = curRange[rangeIndex];
+    if ( curTuple[0] in curJson.defaults ) {
+      curPlotlyGlobal[curIndex] = curJson.defaults[curTuple[0]];
+    } else {
+      rangeIndex = Math.ceil( (curRange.length) / 2 ) - 1;
+      curPlotlyGlobal[curIndex] = curRange[rangeIndex];
+    }
 
     plotlyJson = plotlyJson[curPlotlyGlobal[curIndex]];
     makeRange(curIndex, curTuple)
   });
 
-  makeSliders(curJson.ranges)
+  makeSliders(curJson.ranges, curPlotlyGlobal)
 
   Plotly.plot(curPlot, cleanPlotlyJson(plotlyJson));
   plotlyGlobal = curPlotlyGlobal;
