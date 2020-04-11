@@ -18,3 +18,5 @@ Before running this command you may have to `cd docs` and run the following comm
 
 + `yarn install`
 + `bundle install`
+
+// this makes a few assumptions like you have: [jekyll](https://jekyllrb.com) and [yarn](https://classic.yarnpkg.com/en/docs/install)
