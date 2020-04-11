@@ -82,7 +82,16 @@ function updatePlotly() {
   plotlyJson = globalPlotlyJson.plots;
 
   globalPlotlyJson.ranges.forEach(function (curTuple, curIndex) {
-    plotlyJson = plotlyJson[plotlyGlobal[curIndex]];
+    globalKey = plotlyGlobal[curIndex];
+    nestedJson = plotlyJson[globalKey];
+
+    if ( typeof nestedJson === "undefined" ) {
+      if ( parseInt(globalKey) == parseFloat(globalKey) ) {
+        globalKey += ".0";
+        nestedJson = plotlyJson[globalKey];
+      }
+    }
+    plotlyJson = nestedJson;
   });
 
   Plotly.purge(curPlot);
