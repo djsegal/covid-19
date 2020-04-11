@@ -118,10 +118,12 @@ curPlot = document.getElementById('js-plot');
 
 function cleanPlotlyJson(plotlyJson) {
   if ( "config" in plotlyJson ) {
-    plotlyJson["config"] = $.merge(plotlyJson["config"], {responsive: true, displaylogo: false, modeBarButtonsToRemove: ["select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d", "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox", "hoverClosestCartesian", "hoverCompareCartesian"]});
+    plotlyJson["config"] = $.merge(plotlyJson["config"], {responsive: true, displaylogo: false, modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d", "resetScale2d", "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox", "hoverClosestCartesian", "hoverCompareCartesian"]});
   } else {
-    plotlyJson["config"] = {responsive: true, displaylogo: false, modeBarButtonsToRemove: ["select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d", "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox", "hoverClosestCartesian", "hoverCompareCartesian"]};
+    plotlyJson["config"] = {responsive: true, displaylogo: false, modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d", "resetScale2d", "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox", "hoverClosestCartesian", "hoverCompareCartesian"]};
   }
+
+  plotlyJson["layout"]["dragmode"] = "pan";
 
   delete plotlyJson["layout"]["width"];
   delete plotlyJson["layout"]["height"];
