@@ -1,0 +1,40 @@
+---
+layout: post
+---
+
+<div class="bg-white overflow-hidden shadow sm:rounded-lg">
+  <div class="py-5 sm:py-6">
+
+    {% include card_tabs.html %}
+
+    <div class="px-6 mb-4 pb-0.5">
+      <div id="cs-docs" class="mt-3.5 mb-1.5" style="width:100%;">
+        {{ content }}
+      </div>
+    </div>
+
+    <style>
+      #cs-docs h1, #cs-docs h2, #cs-docs h3, #cs-docs h4, #cs-docs h5, #cs-docs h6 {
+        margin-top: 28px;
+        margin-bottom: 10px;
+      }
+
+      #cs-docs p {
+        margin-bottom: 4px;
+      }
+
+      #cs-docs ul, #cs-docs ol {
+        margin-top: 4px;
+        margin-left: 32px;
+        list-style: initial;
+      }
+
+      #cs-docs li {
+        margin-top: 8px;
+      }
+    </style>
+
+  </div>
+</div>
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
