@@ -1,5 +1,5 @@
 {% assign category_name = page.categories | first %}
-{% assign category_pages = site.categories[category_name]  %}
+{% assign category_pages = site.categories[category_name] | sort:"weight"  %}
 
 {% if category_pages.size > 1 %}
 
