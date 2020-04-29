@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.noUi-connect {
+  @apply bg-teal-400 text-teal-400 shadow-sm !important;
+}
+
 .svg-container svg {
   margin-left: auto;
   margin-right: auto;
