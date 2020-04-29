@@ -6,14 +6,14 @@ function makeRange(curIndex, curTuple) {
 
   curDivStr = "";
   curDivStr += `<div class="js-slider mt-5 sm:grid sm:grid-cols-5 sm:gap-4 sm:items-start">
-      <label for="username" class="block text-sm font-medium leading-5 text-gray-700 sm:mt-px" style="text-align: center;">`;
+      <label class="block text-sm font-medium leading-5 text-gray-700 sm:mt-px" style="text-align: center;">`;
 
   curDivStr += curName;
   curDivStr += `
       </label>
       <div class="mt-1 sm:mt-0 sm:col-span-3">
-        <div class="flex rounded-md shadow-sm">
-          <div class="js-slider__widget" style="width: 100%;"></div>
+        <div class="flex">
+          <div class="js-slider__widget" style="width: 100%; margin: auto;"></div>
         </div>
       </div>
       <div>
@@ -41,6 +41,7 @@ function makeSliders(cur_ranges, cur_defaults) {
     noUiSlider.create(bigValueSlider, {
         start: startIndex,
         step: 1,
+        connect: "lower",
         format: wNumb({
           decimals: 0
         }),
