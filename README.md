@@ -1,4 +1,4 @@
-# Covid-19 Dash for MIT course on Julia [[6S083](https://github.com/mitmath/6S083)]
+## Covid-19 Dash for MIT course on Julia [[6S083](https://github.com/mitmath/6S083)]
 
 
 
